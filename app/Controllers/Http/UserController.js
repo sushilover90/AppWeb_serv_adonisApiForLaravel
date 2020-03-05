@@ -68,25 +68,25 @@ class UserController {
      async ports({request, response}){
          var options = {
              method: 'GET',
-             uri: 'https://api.shodan.io/shodan/ports?key='+access_token,
+             uri: 'https://api.shodan.io/shodan/ports?key='+request.headers().shodan_token,
              json: true   ,
              resolveWithFullResponse: true,
-           
+
          };
          // se agregó función
          let obj = function(){
           //y esto
           return new Promise(function (resolve, reject){
               //esto ya estaba
-         cliente(options)
-             .then( function (response) {                    
+         rp(options)
+             .then( function (response) {
                   resolve (response);
              })
              .catch(function (err) {
-                
+
              });})
          }
-         //  se agregaron estas dos lineas 
+         //  se agregaron estas dos lineas
          let result = await obj();
          return response.status(200).json(result);
      }
@@ -94,25 +94,25 @@ class UserController {
      async facets({request, response}){
          var options = {
              method: 'GET',
-             uri: 'https://api.shodan.io/shodan/host/search/facets?key='+access_token,
+             uri: 'https://api.shodan.io/shodan/host/search/facets?key='+request.headers().shodan_token,
              json: true   ,
              resolveWithFullResponse: true,
-           
+
          };
          // se agregó función
          let obj = function(){
           //y esto
           return new Promise(function (resolve, reject){
               //esto ya estaba
-         cliente(options)
-             .then( function (response) {                    
+         rp(options)
+             .then( function (response) {
                   resolve (response);
              })
              .catch(function (err) {
-                
+
              });})
          }
-         //  se agregaron estas dos lineas 
+         //  se agregaron estas dos lineas
          let result = await obj();
          return response.status(200).json(result);
      }
@@ -120,25 +120,25 @@ class UserController {
      async triggers({request, response}){
          var options = {
              method: 'GET',
-             uri: 'https://api.shodan.io/shodan/alert/triggers?key='+access_token,
+             uri: 'https://api.shodan.io/shodan/alert/triggers?key='+request.headers().shodan_token,
              json: true   ,
              resolveWithFullResponse: true,
-           
+
          };
          // se agregó función
          let obj = function(){
           //y esto
           return new Promise(function (resolve, reject){
               //esto ya estaba
-         cliente(options)
-             .then( function (response) {                    
+         rp(options)
+             .then( function (response) {
                   resolve (response);
              })
              .catch(function (err) {
-                
+
              });})
          }
-         //  se agregaron estas dos lineas 
+         //  se agregaron estas dos lineas
          let result = await obj();
          return response.status(200).json(result);
      }
@@ -146,25 +146,25 @@ class UserController {
      async ip({request, response}){
          var options = {
              method: 'GET',
-             uri: 'https://api.shodan.io/tools/myip?key='+access_token,
+             uri: 'https://api.shodan.io/tools/myip?key='+request.headers().shodan_token,
              json: true   ,
              resolveWithFullResponse: true,
-           
+
          };
          // se agregó función
          let obj = function(){
           //y esto
           return new Promise(function (resolve, reject){
               //esto ya estaba
-         cliente(options)
-             .then( function (response) {                    
+         rp(options)
+             .then( function (response) {
                   resolve (response);
              })
              .catch(function (err) {
-                
+
              });})
          }
-         //  se agregaron estas dos lineas 
+         //  se agregaron estas dos lineas
          let result = await obj();
          return response.status(200).json(result);
      }
