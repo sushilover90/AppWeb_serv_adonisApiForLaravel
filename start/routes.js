@@ -22,5 +22,10 @@ Route.get('/', () => {
 
 Route.post('login', 'UserController.login')
 Route.post('register', 'UserController.register')
+<<<<<<< HEAD
 // Route.get('prueba','UserController.prueba').middleware(['auth']);
 Route.get('prueba','UserController.prueba');
+=======
+
+Route.get('protocols', 'UserController.protocols').middleware(['auth'])
+>>>>>>> gera
