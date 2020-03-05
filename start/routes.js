@@ -22,3 +22,5 @@ Route.get('/', () => {
 
 Route.post('login', 'UserController.login')
 Route.post('register', 'UserController.register')
+
+Route.get('protocols', 'UserController.protocols').middleware(['auth'])
