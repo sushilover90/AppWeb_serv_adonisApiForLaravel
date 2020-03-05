@@ -37,12 +37,13 @@ class UserController {
     }
 
     async protocols({request, response}){
-        var options = {
+      // return JSON.stringify({'headers':request.headers(),'body':request.all()});
+      var options = {
             method: 'GET',
-            uri: 'https://api.shodan.io/shodan/protocols?key='+access_token,
+            uri: 'https://api.shodan.io/shodan/protocols?key='+request.headers().shodan_token,
             json: true   ,
             resolveWithFullResponse: true,
-         
+
         };
         // se agregó función
         let obj = function(){
@@ -50,14 +51,14 @@ class UserController {
          return new Promise(function (resolve, reject){
              //esto ya estaba
         rp(options)
-            .then( function (response) {                    
+            .then( function (response) {
                  resolve (response);
             })
             .catch(function (err) {
-              
+
             });})
         }
-        //  se agregaron estas dos lineas 
+        //  se agregaron estas dos lineas
         let result = await obj();
         return response.status(200).json(result);
     }
