@@ -25,3 +25,4 @@ Route.post('register', 'UserController.register');
 // Route.get('prueba','UserController.prueba').middleware(['auth']);
 Route.get('prueba','UserController.prueba');
 Route.get('protocols', 'UserController.protocols').middleware(['auth']);
+// Route.get('protocols', 'UserController.protocols');
