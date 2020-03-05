@@ -20,9 +20,10 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
 
-Route.post('login', 'UserController.login');
-Route.post('register', 'UserController.register');
-// Route.get('prueba','UserController.prueba').middleware(['auth']);
-Route.get('prueba','UserController.prueba');
-Route.get('protocols', 'UserController.protocols').middleware(['auth']);
-// Route.get('protocols', 'UserController.protocols');
+Route.post('login', 'UserController.login')
+Route.post('register', 'UserController.register')
+Route.get('protocols', 'UserController.protocols').middleware(['auth'])
+Route.get('ports', 'UserController.ports').middleware(['auth'])
+Route.get('triggers', 'UserController.triggers').middleware(['auth'])
+Route.get('facets', 'UserController.facets').middleware(['auth'])
+Route.get('ip', 'UserController.ip').middleware(['auth'])
