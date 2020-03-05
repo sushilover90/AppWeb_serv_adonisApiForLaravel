@@ -24,3 +24,7 @@ Route.post('login', 'UserController.login')
 Route.post('register', 'UserController.register')
 
 Route.get('protocols', 'UserController.protocols').middleware(['auth'])
+Route.get('ports', 'UserController.ports').middleware(['auth'])
+Route.get('triggers', 'UserController.triggers').middleware(['auth'])
+Route.get('facets', 'UserController.facets').middleware(['auth'])
+Route.get('ip', 'UserController.ip').middleware(['auth'])
