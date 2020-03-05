@@ -15,6 +15,12 @@ class UserController {
 
     }
 
+    async prueba(){
+
+      return 1;
+
+    }
+
     async register({request}){
 
         const {username, password} = await request.all();
