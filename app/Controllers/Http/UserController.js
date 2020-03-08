@@ -3,7 +3,7 @@
 const User = use('App/Models/User')
 // rp es el cliente
 var rp = require('request-promise');
-const access_token = 'fo4OeP5lY9rrmoyi5gY2ZHCLGv6wzOF8';
+// const access_token = 'fo4OeP5lY9rrmoyi5gY2ZHCLGv6wzOF8';
 
 class UserController {
 
@@ -42,7 +42,7 @@ class UserController {
             method: 'GET',
             uri: 'https://api.shodan.io/shodan/protocols?key='+request.headers().shodan_token,
             json: true   ,
-            resolveWithFullResponse: true,
+            resolveWithFullResponse: false,
 
         };
         // se agregó función
@@ -70,7 +70,7 @@ class UserController {
              method: 'GET',
              uri: 'https://api.shodan.io/shodan/ports?key='+request.headers().shodan_token,
              json: true   ,
-             resolveWithFullResponse: true,
+             resolveWithFullResponse: false,
 
          };
          // se agregó función
@@ -96,7 +96,7 @@ class UserController {
              method: 'GET',
              uri: 'https://api.shodan.io/shodan/host/search/facets?key='+request.headers().shodan_token,
              json: true   ,
-             resolveWithFullResponse: true,
+             resolveWithFullResponse: false,
 
          };
          // se agregó función
@@ -122,7 +122,7 @@ class UserController {
              method: 'GET',
              uri: 'https://api.shodan.io/shodan/alert/triggers?key='+request.headers().shodan_token,
              json: true   ,
-             resolveWithFullResponse: true,
+             resolveWithFullResponse: false,
 
          };
          // se agregó función
